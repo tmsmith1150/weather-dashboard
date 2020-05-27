@@ -2,52 +2,38 @@
 <html lang="en">
 ​
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   
   <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="./style.css">
   
 </head>
 <body>
-  <div class="container">
-    <h1>Local Weather Search</h1>
+  <h1 id="h1">Weather Dashboard</h1>
+  <div id="searchDiv">
+    <h2>Search City</h2>
+    <input id="cityInput">
+    <button id="add-city">Search</button>
 
-    <form id="city-form">
-      <label for="city">City Name:</label>
-      <input type="text" id="city-input"><br>
-
-      <!-- Button triggers new city to be added -->
-      <input id="city-search" type="submit" value="Search">
-    </form>
-
-    <!-- Rendered buttons will get dumped here  -->
     <div id="buttons-view"></div>
+    <br>
 
-    <!-- Weather info will get dumped Here -->
-    <div id="weather-view"></div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-       
-    var city = "charlotte";
-    var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + city + "&exclude={part}&appid={727c1e4e4fba7ce8daac9b0d1f5f503c}";
-  
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function(response) {
-        console.log(response);
-        console.log(response.Runtime);
-      });
-  // ---------------------------------------------------------
-  
-      console.log("This console.log will probably happen first because of asynchronicity.");
-      var x = 2;
-      var y = 10;
-      var z = 13;
-      console.log("We can also assign some variables and do some arithmetic while we wait too: 2 + 10 + 13 = ", x + y + z);
-    </script>
 
+    <div id="cityDiv" class="current"></div>
+      <div id="cityDivDay5" class="forecast forecast2"><h2 class="h2">5 Day</h2></div>
+      <div id="cityDivDay4" class="forecast forecast3"><h2 class="h2">4 Day</h2></div>
+      <div id="cityDivDay3" class="forecast forecast4"><h2 class="h2">3 Day</h2></div>
+      <div id="cityDivDay2" class="forecast forecast5"><h2 class="h2">2 Day</h2></div>
+
+    
+    
+
+   
+     
+       
+    
 
 
 
@@ -55,7 +41,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript"></script>
+    <script src="script.js"></script>
 
 
 
