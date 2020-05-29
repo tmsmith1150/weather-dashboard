@@ -12,7 +12,7 @@ body {
     font-size: 70px;
     background-image: url(https://images.unsplash.com/photo-1570379510114-eeb67b4e50e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=60);
     width: 100%;
-    margin-top: 10px;
+    margin-top: 30px;
     padding-top: 10px;
 
 }
@@ -26,13 +26,16 @@ body {
 }
 .current {
     background-color: cornflowerblue;
-    height: 250px;
+    height: 300px;
     text-align: center;
-    color: cyan;
-    font-size: 25px;
-    margin-left: 400px;
-    margin-right: 400px;
-    padding-top: 20px
+    color: darkslategray;
+    font-size: 35px;
+    font-weight: 600;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url("http://clipart-library.com/images/ATbKb4xkc.png");
    
 }
 .forecast {
@@ -41,34 +44,123 @@ body {
     background-color: blue;
     margin-top: 10%;
     padding-left: 20px;
+    margin-bottom: 60px;
 }
 
 .forecast2 {
     float: right;
-    margin-right: 30px;
+    margin-right: 200px;
     color: cyan;
+    font-size: 20px;
  }
  .forecast3 {
     float: right;
-    margin-right: 30px;
+    margin-right: 100px;
     color: cyan;
+    font-size: 20px;
 }
 .forecast4 {
     float: right;
-    margin-right: 30px;
+    margin-right: 100px;
     color: cyan;
+    font-size: 20px;
 }
 
 .forecast5 {
     float: right;
-    margin-right: 30px;
+    margin-right: 100px;
     color: cyan;
+    font-size: 20px;
 }
-.h3 {
+#h3 {
     color: white;
     text-align: center;
     font-size: 25px;
 }
 
 
+
+@media screen and (max-width: 600px) {
+    .forecast2 {
+        float: right;
+        margin-right: 50px;
+        color: cyan;
+        font-size: 20px;
+     }
+     .forecast3 {
+        float: right;
+        margin-right: 50px;
+        color: cyan;
+        font-size: 20px;
+    }
+    .forecast4 {
+        float: right;
+        margin-right: 50px;
+        color: cyan;
+        font-size: 20px;
+    }
+    
+    .forecast5 {
+        float: right;
+        margin-right: 50px;
+        color: cyan;
+        font-size: 20px;
+    }
+    .current {
+        background-color: cornflowerblue;
+        height:300px;
+        text-align: center;
+        color: darkslategray;
+        font-size: 25px;
+        font-weight: 600;
+        margin-left: 200px;
+        margin-right: 200px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background-image: url("http://clipart-library.com/images/ATbKb4xkc.png");
+       
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .forecast2 {
+        float: right;
+        margin-right: 100px;
+        color: cyan;
+        font-size: 20px;
+     }
+     .forecast3 {
+        float: right;
+        margin-right: 100px;
+        color: cyan;
+        font-size: 20px;
+    }
+    .forecast4 {
+        float: right;
+        margin-right: 100px;
+        color: cyan;
+        font-size: 20px;
+    }
+    
+    .forecast5 {
+        float: right;
+        margin-right: 100px;
+        color: cyan;
+        font-size: 20px;
+    }
+    .current {
+        background-color: cornflowerblue;
+        height:300px;
+        text-align: center;
+        color: darkslategray;
+        font-size: 25px;
+        font-weight: 600;
+        margin-left: 200px;
+        margin-right: 200px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background-image: url("http://clipart-library.com/images/ATbKb4xkc.png");
+       
+    }
+}
 
