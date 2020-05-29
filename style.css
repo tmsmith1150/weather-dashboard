@@ -1,7 +1,7 @@
 
 body {
     background-color: aliceblue;
-    background-image: url(https://images.unsplash.com/photo-1562261724-20c8efc501c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1550&q=60);
+    background-image: url(https://images.unsplash.com/photo-1562261724-20c8efc501c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=60);
 }
 
 #h1 {
@@ -16,12 +16,23 @@ body {
     padding-top: 10px;
 
 }
+#h2 {
+    font-size: 45px;
+}
+#searchDiv {
+    margin-left: 100px;
+
+
+}
 .current {
     background-color: cornflowerblue;
-    height: 200px;
+    height: 250px;
     text-align: center;
     color: cyan;
-    font-size: 25px
+    font-size: 25px;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding-top: 20px
    
 }
 .forecast {
@@ -53,7 +64,7 @@ body {
     margin-right: 30px;
     color: cyan;
 }
-.h2 {
+.h3 {
     color: white;
     text-align: center;
     font-size: 25px;

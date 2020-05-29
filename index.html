@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
    
   <title>Weather Dashboard</title>
   <link rel="stylesheet" href="./style.css">
@@ -12,7 +13,7 @@
 <body>
   <h1 id="h1">Weather Dashboard</h1>
   <div id="searchDiv">
-    <h2>Search City</h2>
+    <h2 id="h2">Search City</h2>
     <input id="cityInput">
     <button id="add-city">Search</button>
 
@@ -22,10 +23,10 @@
     </div>
 
     <div id="cityDiv" class="current"></div>
-      <div id="cityDivDay5" class="forecast forecast2"><h2 class="h2">5 Day</h2></div>
-      <div id="cityDivDay4" class="forecast forecast3"><h2 class="h2">4 Day</h2></div>
-      <div id="cityDivDay3" class="forecast forecast4"><h2 class="h2">3 Day</h2></div>
-      <div id="cityDivDay2" class="forecast forecast5"><h2 class="h2">2 Day</h2></div>
+      <div id="cityDivDay5" class="forecast forecast2"><h3 class="h3"></h3></div>
+      <div id="cityDivDay4" class="forecast forecast3"><h3 class="h3"></h3></div>
+      <div id="cityDivDay3" class="forecast forecast4"><h3 class="h3"></h3></div>
+      <div id="cityDivDay2" class="forecast forecast5"><h3 class="h3"></h3></div>
 
     
     
@@ -39,7 +40,7 @@
 
 
 
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
 

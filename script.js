@@ -1,3 +1,6 @@
+let day = moment().days()
+console.log(day)
+
 
 var APIKey = "727c1e4e4fba7ce8daac9b0d1f5f503c";
 var cityName = $("#cityInput").val().trim()
@@ -8,25 +11,52 @@ var cityName = $("#cityInput").val().trim()
 function handleClick() {
   var cityName = $("#cityInput").val().trim()
 //Here we build the URLwe need to query the database
-var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey
+
+
+var latLonQuery = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey
+
+var lat;
+var lon;
+
+$.ajax({
+  url: latLonQuery,
+  method: "GET"
+})
+.then(function(response) {
+
+  
+
+  console.log(latLonQuery);
+  console.log(response);
+  console.log("lat " + (response.coord.lat));
+  console.log("lon " + (response.coord.lon));
+
+  
+  
+  
+
+
+var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&exclude=minutely,hourly" + "&appid=" + APIKey
+
+
 
 $.ajax({
   url: queryURL,
   method: "GET"
 
 
-}).then(function(response) {
+}).then(function(result) {
 
 
 
   //Log the query
   console.log(queryURL);
-  console.log(response);
-  console.log("Temp " + convertKelvin(response.main.temp) + " F");
-  console.log("TempLow " + convertKelvin(response.main.temp_min) + " F");
-  console.log("TempHigh " + convertKelvin(response.main.temp_max) + " F");
+  console.log(result);
+  console.log("Temp " + convertKelvin(result.current.temp) + " F");
+  console.log("TempLow " + convertKelvin(result.daily[0].temp.min) + " F");
+  console.log("TempHigh " + convertKelvin(result.daily[0].temp.max) + " F");
 
-  // var nameOfCity = (response.city.name);
+  // var nameOfCity = (result.city.name);
   // var pOne = $("<p>").text("Weather: " + name);
   // cityDiv.append(pOne);
   
@@ -37,45 +67,55 @@ $.ajax({
   cityDiv4 = $("#cityDivDay4");
   cityDiv5 = $("#cityDivDay5");
   // Creating an element to have the weather displayed (list is not defined ref error in console so I changed to Array)
-  var temp = $("<p>").text("Current Temp " + convertKelvin(response.main.temp) + " F");
-  var tempLow = $("<p>").text("TempLow " + convertKelvin(response.main.temp_min) + " F");
-  var tempHigh = $("<p>").text("TempHigh " + convertKelvin(response.main.temp_max) + " F");
-  var humidity = $("<p>").text("Humidity " + response.main.humidity + "%");
+  var temp = $("<p>").text("Current Temp " + convertKelvin(result.current.temp) + " F");
+  var tempLow = $("<p>").text("Today's Low " + convertKelvin(result.daily[0].temp.min) + " F");
+  var tempHigh = $("<p>").text("Today's High " + convertKelvin(result.daily[0].temp.max) + " F");
+  var humidity = $("<p>").text("Humidity " + result.daily[0].humidity + "%");
   // Displaying the weather
   cityDiv.append(temp, tempLow, tempHigh, humidity);
 
-  var temp = $("<p>").text("Current Temp " + convertKelvin(response.main.temp) + " F");
-  var tempLow = $("<p>").text("TempLow " + convertKelvin(response.main.temp_min) + " F");
-  var tempHigh = $("<p>").text("TempHigh " + convertKelvin(response.main.temp_max) + " F");
-  var humidity = $("<p>").text("Humidity " + response.main.humidity + "%");
+  
+  var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[1].temp.min) + " F");
+  var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[1].temp.max) + " F");
+  var humidity = $("<p>").text("Humidity " + result.daily[1].humidity + "%");
   cityDiv2.append(tempLow, tempHigh, humidity);
 
-  var temp = $("<p>").text("Current Temp " + convertKelvin(response.main.temp) + " F");
-  var tempLow = $("<p>").text("TempLow " + convertKelvin(response.main.temp_min) + " F");
-  var tempHigh = $("<p>").text("TempHigh " + convertKelvin(response.main.temp_max) + " F");
-  var humidity = $("<p>").text("Humidity " + response.main.humidity + "%");
+  
+  var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[2].temp.min) + " F");
+  var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[2].temp.max) + " F");
+  var humidity = $("<p>").text("Humidity " + result.daily[2].humidity + "%");
   cityDiv3.append(tempLow, tempHigh, humidity);
 
-  var temp = $("<p>").text("Current Temp " + convertKelvin(response.main.temp) + " F");
-  var tempLow = $("<p>").text("TempLow " + convertKelvin(response.main.temp_min) + " F");
-  var tempHigh = $("<p>").text("TempHigh " + convertKelvin(response.main.temp_max) + " F");
-  var humidity = $("<p>").text("Humidity " + response.main.humidity + "%");
+  
+  var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[3].temp.min) + " F");
+  var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[3].temp.max) + " F");
+  var humidity = $("<p>").text("Humidity " + result.daily[3].humidity + "%");
   cityDiv4.append(tempLow, tempHigh, humidity);
 
-  var temp = $("<p>").text("Current Temp " + convertKelvin(response.main.temp) + " F");
-  var tempLow = $("<p>").text("TempLow " + convertKelvin(response.main.temp_min) + " F");
-  var tempHigh = $("<p>").text("TempHigh " + convertKelvin(response.main.temp_max) + " F");
-  var humidity = $("<p>").text("Humidity " + response.main.humidity + "%");
+  
+  var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[4].temp.min) + " F");
+  var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[4].temp.max) + " F");
+  var humidity = $("<p>").text("Humidity " + result.daily[4].humidity + "%");
   cityDiv5.append(tempLow, tempHigh, humidity);
 
   
-})};
+})
+
+});
+};
+
 
 $("#add-city").on("click", handleClick)
 
 function convertKelvin(num) {
   return parseInt(((((num) -273.15) * 1.8) +32))
 }
+
+
+
+
+
+
 
 
 
@@ -92,7 +132,7 @@ function renderButtons() {
     // Then dynamicaly generating buttons for each city in the array
     // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
     var a = $("<button>");
-    // Adding a class of movie-btn to our button
+    // Adding a class of city-btn to our button
     a.addClass("city-btn");
     // Adding a data-attribute
     a.attr("data-name", citiesBtns[i]);
