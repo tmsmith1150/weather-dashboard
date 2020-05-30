@@ -12,6 +12,11 @@ var cityName = $("#cityInput").val().trim()
 //Here we run our AJAX call to the OpenWeatherMap API
 function handleClick() {
   var cityName = $("#cityInput").val().trim()
+
+  $("#add-city").click(function(){
+    $(".current").empty();
+    $(".forecast").empty();
+  });
   
   
 //Here we build the URLwe need to query the database
@@ -150,8 +155,16 @@ function renderButtons() {
     a.text(citiesBtns[i]);
     // Adding the button to the buttons-view div
     $("#buttons-view").append(a);
+
+    
+    
+
   }
 }
+
+
+
+
 // This function handles events where a city button is clicked
 $("#add-city").on("click", function(event) {
   event.preventDefault();
@@ -161,9 +174,17 @@ $("#add-city").on("click", function(event) {
   // Adding city from the textbox to our array
   citiesBtns.push(city);
 
+  
+
   // Calling renderButtons which handles the processing of our city array
   renderButtons();
+
+  
+  
 });
+
+
+
 
 
 
