@@ -12,6 +12,8 @@ var cityName = $("#cityInput").val().trim()
 //Here we run our AJAX call to the OpenWeatherMap API
 function handleClick() {
   var cityName = $("#cityInput").val().trim()
+  
+  
 //Here we build the URLwe need to query the database
 
 
@@ -79,27 +81,32 @@ $.ajax({
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[1].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[1].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[1].humidity + "%");
-  cityDiv2.append(moment().add(1, 'days').format('l'), tempLow, tempHigh, humidity);
+  cityDiv2.append(tempLow, tempHigh, humidity);
+  $(".h3-2").text(moment().add(1, 'days').format('l'));
 
   
   // var day = $(".h3-3").text(result.daily[2].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[2].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[2].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[2].humidity + "%");
-  cityDiv3.append(moment().add(2, 'days').format('l'), tempLow, tempHigh, humidity);
+  cityDiv3.append(tempLow, tempHigh, humidity);
+  $(".h3-3").text(moment().add(2, 'days').format('l'));
 
   
   // var day = $(".h3-4").text(result.daily[3].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[3].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[3].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[3].humidity + "%");
-  cityDiv4.append(moment().add(3, 'days').format('l'), tempLow, tempHigh, humidity);
+  cityDiv4.append(tempLow, tempHigh, humidity);
+  $(".h3-4").text(moment().add(3, 'days').format('l'));
+
 
   // var day = $(".h3-2").text(result.daily[4].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[4].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[4].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[4].humidity + "%");
-  cityDiv5.append(moment().add(4, 'days').format('l'), tempLow, tempHigh, humidity);
+  cityDiv5.append(tempLow, tempHigh, humidity);
+  $(".h3-5").text(moment().add(4, 'days').format('l'));
 
   
 })
