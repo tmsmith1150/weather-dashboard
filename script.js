@@ -1,5 +1,16 @@
-let day = moment().days()
-console.log(day)
+
+
+var day = new Date();
+var dd = String(day.getDate() + 1);
+var mm = String(day.getMonth() + 1);
+var day = mm + '/' + dd;
+
+for (i = 0; i < day.length; i++) {
+  // var today = (day[i] + 1);
+  console.log(day);
+}
+
+
 
 
 var APIKey = "727c1e4e4fba7ce8daac9b0d1f5f503c";
@@ -56,9 +67,7 @@ $.ajax({
   console.log("TempLow " + convertKelvin(result.daily[0].temp.min) + " F");
   console.log("TempHigh " + convertKelvin(result.daily[0].temp.max) + " F");
 
-  // var nameOfCity = (result.city.name);
-  // var pOne = $("<p>").text("Weather: " + name);
-  // cityDiv.append(pOne);
+  
   
   //Storing the weather data
   cityDiv = $("#cityDiv");
@@ -75,31 +84,31 @@ $.ajax({
   cityDiv.append(temp, tempLow, tempHigh, humidity);
 
   
-  var day = $(".h3-5").text(result.daily[1].dt);
+  // var day = $(".h3-5").text(result.daily[1].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[1].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[1].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[1].humidity + "%");
   cityDiv2.append(day, tempLow, tempHigh, humidity);
 
   
-  var day = $(".h3-3").text(result.daily[2].dt);
+  // var day = $(".h3-3").text(result.daily[2].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[2].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[2].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[2].humidity + "%");
-  cityDiv3.append(tempLow, tempHigh, humidity);
+  cityDiv3.append(day, tempLow, tempHigh, humidity);
 
   
-  var day = $(".h3-4").text(result.daily[3].dt);
+  // var day = $(".h3-4").text(result.daily[3].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[3].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[3].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[3].humidity + "%");
-  cityDiv4.append(tempLow, tempHigh, humidity);
+  cityDiv4.append(day, tempLow, tempHigh, humidity);
 
-  var day = $(".h3-").text(result.daily[4].dt);
+  // var day = $(".h3-2").text(result.daily[4].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[4].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[4].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[4].humidity + "%");
-  cityDiv5.append(tempLow, tempHigh, humidity);
+  cityDiv5.append(day, tempLow, tempHigh, humidity);
 
   
 })
