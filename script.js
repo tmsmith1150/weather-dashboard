@@ -1,14 +1,5 @@
 
 
-var day = new Date();
-var dd = String(day.getDate() + 1);
-var mm = String(day.getMonth() + 1);
-var day = mm + '/' + dd;
-
-for (i = 0; i < day.length; i++) {
-  // var today = (day[i] + 1);
-  console.log(day);
-}
 
 
 
@@ -88,27 +79,27 @@ $.ajax({
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[1].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[1].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[1].humidity + "%");
-  cityDiv2.append(day, tempLow, tempHigh, humidity);
+  cityDiv2.append(moment().add(1, 'days').format('l'), tempLow, tempHigh, humidity);
 
   
   // var day = $(".h3-3").text(result.daily[2].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[2].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[2].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[2].humidity + "%");
-  cityDiv3.append(day, tempLow, tempHigh, humidity);
+  cityDiv3.append(moment().add(2, 'days').format('l'), tempLow, tempHigh, humidity);
 
   
   // var day = $(".h3-4").text(result.daily[3].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[3].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[3].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[3].humidity + "%");
-  cityDiv4.append(day, tempLow, tempHigh, humidity);
+  cityDiv4.append(moment().add(3, 'days').format('l'), tempLow, tempHigh, humidity);
 
   // var day = $(".h3-2").text(result.daily[4].dt);
   var tempLow = $("<p>").text("TempLow " + convertKelvin(result.daily[4].temp.min) + " F");
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[4].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[4].humidity + "%");
-  cityDiv5.append(day, tempLow, tempHigh, humidity);
+  cityDiv5.append(moment().add(4, 'days').format('l'), tempLow, tempHigh, humidity);
 
   
 })
