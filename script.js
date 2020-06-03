@@ -87,7 +87,8 @@ $.ajax({
   var tempHigh = $("<p>").text("TempHigh " + convertKelvin(result.daily[1].temp.max) + " F");
   var humidity = $("<p>").text("Humidity " + result.daily[1].humidity + "%");
   cityDiv2.append(tempLow, tempHigh, humidity);
-  $(".h3-2").text(moment().add(1, 'days').format('l'));
+ $(".h3-2").text(moment().add(1, 'days').format('l'));
+  
 
   
   // var day = $(".h3-3").text(result.daily[2].dt);
