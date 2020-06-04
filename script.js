@@ -40,7 +40,7 @@ function handleClick(cityName) {
 //Here we build the URLwe need to query the database
 
 
-var latLonQuery = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey
+var latLonQuery = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey
 
 var lat;
 var lon;
