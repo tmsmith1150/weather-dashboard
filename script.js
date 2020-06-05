@@ -140,6 +140,9 @@ $.ajax({
 };
 
 
+
+
+
 $("#add-city").on("click", handleClick)
 
 function convertKelvin(num) {
@@ -182,11 +185,7 @@ function renderButtons() {
   }
 }
 
-$(document).on("click", ".city-btn", function(event) {
-  let val = $(this).attr("data-name");
-  handleClick(val)
-  console.log(val);
-});
+
 
 
 // This function handles events where a city button is clicked
@@ -206,9 +205,6 @@ $("#add-city").on("click", function(event) {
   
   
 });
-
-
-
 
 
 

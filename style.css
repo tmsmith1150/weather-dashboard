@@ -86,20 +86,22 @@ body {
         color: white;
         height: 200px;
         text-align: center;
-        font-size: 70px;
+        font-size: 50px;
         background-image: url(https://images.unsplash.com/photo-1570379510114-eeb67b4e50e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=60);
         width: 100%;
         margin-top: 30px;
-        padding-top: 10px;
+        padding-top: 60px;
     
     }
     .forecast {
-        width: 150px;
-        height: 150px;
+        /* width: 150px;
+        height: 150px; */
         background-color: blue;
-        margin-top: 10%;
+        /* margin-top: 10%;
         padding-left: 20px;
-        margin-bottom: 60px;
+        margin-bottom: 60px; */
+        margin: auto;
+        display: block;
     }
     .forecast2 {
         float: right;
@@ -127,7 +129,7 @@ body {
         font-size: 20px;
     }
     .current {
-        display: block;
+        /* display: block; */
         background-color: cornflowerblue;
         height:300px;
         width: 500px;
@@ -135,11 +137,11 @@ body {
         color: darkslategray;
         font-size: 25px;
         font-weight: 600;
-        margin-left: 100px;
-        margin-right: 500px;
+        /* margin-left: 100px; */
+        /* margin-right: 500px; */
         padding-top: 30px;
         padding-bottom: 30px;
-        background-image: url("http://clipart-library.com/images/ATbKb4xkc.png");
+        background-image: url("http://clipart-library.com/images/ATbKb4xkc.png");    
        
     }
 }
